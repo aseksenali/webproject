@@ -1,0 +1,14 @@
+<div class="grid-container shadowed" [id]="'_' + book.id">
+  <div class="image shadowed">
+    <img [src]="book.image" alt="Book Image">
+  </div>
+  <div class="description">
+    <i class="fas fa-star" *ngFor="let _ of generateArray(fullRating)"></i>
+    <i class="fas fa-star-half-alt" *ngFor="let _ of generateArray(halfRating)"></i>
+    <i class="far fa-star" *ngFor="let _ of generateArray(5 - fullRating - halfRating)"></i>
+    <h1>{{ book.name }}</h1>
+    <p class="author">{{ book.author[0] }}</p>
+    <p class="price">{{ book.price | currency }}</p>
+    <button #button class="shadowed bumping animated" (click)="createOrder()"><span #text>Add to card</span><i #i class="fas fa-check"></i></button>
+  </div>
+</div>

@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "webdev"
+    }
+  },
+  "defaultProject": "webdev",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -1,1 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  font: 14px "Century Gothic";
+  background-color: #e4e4e4;
+}

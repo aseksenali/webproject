@@ -1,0 +1,28 @@
+<div class="grid-container">
+  <div class="logo">
+    <img src="../../assets/images/logo.png" alt="Logo">
+  </div>
+  <div class="account">
+    <div class="account_buttons">
+      <div class="animated" id="filter-button" (click)="showPopup()">ADVANCED SEARCH</div>
+      <fa-icon [icon]="faShoppingCart" class="search_button animated"></fa-icon>
+      <fa-icon [icon]="faAccount" class="account_button animated"></fa-icon>
+    </div>
+  </div>
+  <nav [style.height]="filterOpen?'300px':'0'"
+       [style.margin]="filterOpen?'20px':'0'"
+       [class.bumping]="filterOpen"
+       class="shadowed">
+    <app-filter></app-filter>
+  </nav>
+  <div>
+    <label>
+      <fa-icon [icon]="faSearch" class="search_icon" [ngClass]="searchFocus || searchHover ? 'color-white' : ''"></fa-icon>
+      <input type="text" class="search shadowed"
+             (focusin)="searchFocus=true"
+             (focusout)="searchFocus=false"
+             (mouseenter)="searchHover=true"
+             (mouseleave)="searchHover=false">
+    </label>
+  </div>
+</div>
