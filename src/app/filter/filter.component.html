@@ -3,13 +3,8 @@
     <h1>Choose genre</h1>
     <div class="filter-form">
       <label *ngFor="let genre of genres">
-        <input type="checkbox">{{genre}}
+        <input type="checkbox" [value]="genre" (change)="onGenreSelect($event)">{{genre}}
       </label>
-    </div>
-  </div>
-  <div class="filter-menu price">
-    <h1>Choose price</h1>
-    <div class="filter-slider">
     </div>
   </div>
 </div>

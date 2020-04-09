@@ -31,7 +31,6 @@ export class BookCardComponent implements OnInit {
   animate(time: number) {
     const duration = 2000;
     let timeFraction = (time - this.start) / duration;
-    console.log(timeFraction);
     if (timeFraction > 1) {
       timeFraction = 1;
     }

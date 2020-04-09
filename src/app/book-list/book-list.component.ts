@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {BookService} from '../services/book.service';
 import {Book} from '../models/book';
+import { Router } from '@angular/router';
+import {FilterService} from '../services/filter.service';
 
 @Component({
   selector: 'app-book-list',
@@ -9,10 +11,11 @@ import {Book} from '../models/book';
 })
 export class BookListComponent implements OnInit {
   books: Book[];
-  constructor(private bookService: BookService) { }
+  constructor(private bookService: BookService, private filterService: FilterService) { }
 
   ngOnInit(): void {
     this.bookService.getAllBooks().subscribe(books => this.books = books);
+    this.filterService.genreFilterIsActive.subscribe(genres => this.filterService.filterByGenre(genres).subscribe(books => this.books = books));
+    this.filterService.genreFilterIsDisabled.subscribe(() => this.bookService.getAllBooks().subscribe(books => this.books = books));
   }
-
 }

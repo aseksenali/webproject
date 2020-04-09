@@ -9,4 +9,5 @@ export interface Book {
   language: string;
   image: string;
   rating: number;
+  description: string;
 }

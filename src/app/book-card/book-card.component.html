@@ -1,4 +1,4 @@
-<div class="grid-container shadowed" [id]="'_' + book.id">
+<div class="grid-container shadowed animated" [id]="'_' + book.id" [routerLink]="[book.id]">
   <div class="image shadowed">
     <img [src]="book.image" alt="Book Image">
   </div>
@@ -9,6 +9,6 @@
     <h1>{{ book.name }}</h1>
     <p class="author">{{ book.author[0] }}</p>
     <p class="price">{{ book.price | currency }}</p>
-    <button #button class="shadowed bumping animated" (click)="createOrder()"><span #text>Add to card</span><i #i class="fas fa-check"></i></button>
+    <button #button class="shadowed bumping animated" (click)="$event.stopPropagation(); createOrder()"><span #text>Add to card</span><i #i class="fas fa-check"></i></button>
   </div>
 </div>

@@ -1,6 +1,6 @@
 <div class="grid-container">
   <div class="logo">
-    <img src="../../assets/images/logo.png" alt="Logo">
+    <a routerLink="/"><img src="../../assets/images/logo.png" alt="Logo"></a>
   </div>
   <div class="account">
     <div class="account_buttons">
@@ -15,9 +15,10 @@
        class="shadowed">
     <app-filter></app-filter>
   </nav>
-  <div>
+  <div class="search_field">
     <label>
-      <fa-icon [icon]="faSearch" class="search_icon" [ngClass]="searchFocus || searchHover ? 'color-white' : ''"></fa-icon>
+      <fa-icon [icon]="faSearch" class="search_icon"
+               [ngClass]="searchFocus || searchHover ? 'color-white' : ''"></fa-icon>
       <input type="text" class="search shadowed"
              (focusin)="searchFocus=true"
              (focusout)="searchFocus=false"

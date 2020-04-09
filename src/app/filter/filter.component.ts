@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {BookService} from '../services/book.service';
+import {FilterService} from '../services/filter.service';
+import {from} from 'rxjs';
 
 @Component({
   selector: 'app-filter',
@@ -7,7 +9,9 @@ import {BookService} from '../services/book.service';
   styleUrls: ['./filter.component.css']
 })
 export class FilterComponent implements OnInit {
-  genres: Set<string>;
+  genres: string[];
+  selectedGenres = new Set<string>();
+  genreCounter = 0;
   filterFields = [
     'price',
     'genre',
@@ -16,10 +20,23 @@ export class FilterComponent implements OnInit {
     'cover',
     'language'
   ];
-  constructor(private bookService: BookService) { }
+  constructor(private bookService: BookService, private filterService: FilterService) { }
 
   ngOnInit(): void {
-    this.genres = this.bookService.getGenres();
+    this.bookService.getGenres().subscribe(genres => this.genres = genres.sort());
   }
-
+  onGenreSelect(e): void {
+    if (e.target.checked) {
+      this.genreCounter += 1;
+      this.selectedGenres.add(e.target.defaultValue);
+    } else {
+      this.genreCounter -= 1;
+      this.selectedGenres.delete(e.target.defaultValue);
+    }
+    if (this.genreCounter !== 0) {
+      this.filterService.onGenreFilter(Array.from(this.selectedGenres));
+    } else {
+      this.filterService.disableGenreFilter();
+    }
+  }
 }

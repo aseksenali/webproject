@@ -1,14 +1,11 @@
 .grid-container {
   display: grid;
-  grid-template-rows: 60px auto;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-areas: 'logo search buttons' 'menu menu menu';
   justify-content: space-between;
 }
 .logo {
   grid-area: logo;
 }
-.logo>img {
+.logo img {
   position: relative;
   bottom: 9px;
   max-height: 50px;
@@ -119,4 +116,64 @@ label>fa-icon {
 @keyframes unbump {
   from {box-shadow: 9px 9px 9px rgba(100, 100, 100, 0.3), -9px -9px 9px rgba(255, 255, 255, 0.4);}
   to {box-shadow: 0 0 0 rgba(100, 100, 100, 0.3), 0 0 0 rgba(255, 255, 255, 0.4);}
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .search_field {
+    display: none;
+  }
+  .grid-container {
+    grid-template-rows: 60px auto;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 'logo buttons' 'menu menu';
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .search_field {
+    display: none;
+  }
+  .grid-container {
+    grid-template-rows: 60px auto;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 'logo buttons' 'menu menu';
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .search_field {
+    display: none;
+  }
+  .grid-container {
+    grid-template-rows: 60px auto;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 'logo buttons' 'menu menu';
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .search_field {
+    display: none;
+  }
+  .grid-container {
+    grid-template-rows: 60px auto;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 'logo buttons' 'menu menu';
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .search_field {
+    display: block;
+  }
+  .grid-container {
+    grid-template-rows: 60px auto;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: 'logo search buttons' 'menu menu menu';
+  }
 }

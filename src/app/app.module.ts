@@ -11,6 +11,10 @@ import { BookListComponent } from './book-list/book-list.component';
 import { BookCardComponent } from './book-card/book-card.component';
 import { SaleWindowComponent } from './sale-window/sale-window.component';
 import { FilterComponent } from './filter/filter.component';
+import { BookDetailsComponent } from './book-details/book-details.component';
+import { AppRoutingModule } from './app-routing.module';
+import {FormsModule} from '@angular/forms';
+import {CurrencyPipe} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -19,17 +23,20 @@ import { FilterComponent } from './filter/filter.component';
     BookListComponent,
     BookCardComponent,
     SaleWindowComponent,
-    FilterComponent
+    FilterComponent,
+    BookDetailsComponent
   ],
   imports: [
     BrowserModule,
     FontAwesomeModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    )
+      InMemoryDataService, {dataEncapsulation: false}
+    ),
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [CurrencyPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
