@@ -1,0 +1,110 @@
+.grid-container {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+  grid-template-areas: 'image details';
+}
+.grid-container * {
+  font-size: 16px;
+}
+.image {
+  grid-area: image;
+  height: 500px;
+}
+.image>img {
+  height: 100%;
+  border-radius: 20px;
+}
+.shadowed {
+  box-shadow: 9px 9px 9px rgba(100, 100, 100, 0.3), -9px -9px 9px rgba(255, 255, 255, 0.4);
+}
+.details {
+  grid-area: details;
+  padding-left: 25px;
+}
+.details i.fa-star, .details i.fa-star-half-alt {
+  font-size: 30px;
+}
+div {
+  margin-bottom: 20px;
+}
+input {
+  display: block;
+  border: none;
+  margin: 1em 0;
+}
+input:focus {
+  outline: none;
+}
+input[type=number] {
+  user-select:none;
+}
+textarea {
+  width: 80%;
+  height: 150px;
+  border: none;
+  resize: none;
+  float: right;
+  outline: none;
+}
+.textarea {
+  margin: 20px 0;
+  height: 150px;
+}
+.genres span {
+  display: inline-block;
+  padding: 5px 10px 5px 10px;
+  margin-left: 20px;
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+}
+i {
+  text-shadow: 1px 1px 1px rgba(100, 100, 100, 0.3), -1px -1px 1px rgba(255, 255, 255, 0.4);
+  background-color: rgba(253,189,202,0);
+}
+i.fa-check {
+  display: none;
+}
+button {
+  border-radius: 40px;
+  border: 1px solid #e1e1e1;
+  width: 20%;
+  height: calc(1em + 15px);
+  transition: width ease-in-out 125ms;
+}
+button>span {
+  background-color: rgba(0, 0, 0, 0);
+}
+button:focus {
+  outline: none;
+  transition: all ease-in-out 250ms;
+}
+button:hover {
+  cursor: pointer;
+}
+button:active>span {
+  font-size: 13px;
+  transition: all ease-in-out 125ms;
+}
+.animated {
+  border: 1px solid #e1e1e1;
+  box-shadow: 9px 9px 9px rgba(100, 100, 100, 0.3), -9px -9px 9px rgba(255, 255, 255, 0.4);
+  animation: unhovering 50ms;
+  animation-fill-mode: both;
+}
+.animated:active {
+  animation-name: hovering;
+  animation-duration: 50ms;
+  animation-fill-mode: both;
+}
+@keyframes hovering {
+  0% {box-shadow: 9px 9px 9px rgba(100, 100, 100, 0.3), -9px -9px 9px rgba(255, 255, 255, 0.4);}
+  80% {box-shadow: 0 0 0 rgba(100, 100, 100, 0.3), 0 0 0 rgba(255, 255, 255, 0.4);}
+  100% {box-shadow: inset 2px 2px 4px rgba(100, 100, 100, 0.3), inset -2px -2px 4px rgba(255, 255, 255, 0.4);}
+}
+
+@keyframes unhovering {
+  0% {box-shadow: inset 2px 2px 4px rgba(100, 100, 100, 0.3), inset -2px -2px 4px rgba(255, 255, 255, 0.4);}
+  20% {box-shadow: 0 0 0 rgba(100, 100, 100, 0.3), 0 0 0 rgba(255, 255, 255, 0.4);}
+  100% {box-shadow: 9px 9px 9px rgba(100, 100, 100, 0.3), -9px -9px 9px rgba(255, 255, 255, 0.4);}
+}

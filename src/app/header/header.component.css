@@ -1,0 +1,179 @@
+.grid-container {
+  display: grid;
+  justify-content: space-between;
+}
+.logo {
+  grid-area: logo;
+}
+.logo img {
+  position: relative;
+  bottom: 9px;
+  max-height: 50px;
+  display: block;
+  margin: auto;
+  z-index: 10;
+}
+.account {
+  grid-area: buttons;
+  justify-self: right;
+}
+.search_button {
+  margin-right: 30px;
+}
+#filter-button {
+  display: inline-block;
+  margin-right:30px;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.animated {
+  border: 1px solid #e1e1e1;
+  border-radius: 20px;
+  box-shadow: 9px 9px 9px rgba(100, 100, 100, 0.3), -9px -9px 9px rgba(255, 255, 255, 0.4);
+  animation: unhovering 125ms;
+  animation-fill-mode: both;
+}
+.animated:hover {
+  animation-name: hovering;
+  animation-duration: 125ms;
+  animation-fill-mode: both;
+}
+.shadowed {
+  box-shadow: 9px 9px 9px rgba(100, 100, 100, 0.3), -9px -9px 9px rgba(255, 255, 255, 0.4);
+}
+fa-icon {
+  padding: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+fa-icon:not(.search_icon):hover {
+  font-size: 18px;
+  padding: 6px;
+  transition: all ease-in-out 125ms;
+}
+nav {
+  margin: 10px 0;
+  grid-area: menu;
+  justify-self: center;
+  transition: all ease-in-out 500ms;
+  border-radius: 15px;
+  width: 100%;
+  overflow: hidden;
+}
+.bumping {
+  animation-name: bump;
+  animation-fill-mode: both;
+  animation-delay: 500ms;
+  animation-duration: 250ms;
+}
+.search_icon {
+  position: absolute;
+  z-index: 100;
+  right: 25%;
+  top: 32px;
+  cursor: text;
+}
+.search {
+  grid-area: search;
+  border: 1px solid #e1e1e1;
+  margin: 10px 0;
+  position: relative;
+  bottom: 15px;
+  border-radius: 20px;
+  width: 100%;
+  padding: 10px 20px;
+  transition: all ease-in-out 250ms;
+  font-size: 16px;
+}
+label>fa-icon {
+  transition: all ease-in-out 250ms;
+}
+.search:focus, .search:hover {
+  outline: none;
+  transition: all ease-in-out 250ms;
+}
+.color-white {
+  color: gray;
+  transition: all ease-in-out 250ms;
+}
+
+@keyframes hovering {
+  0% {box-shadow: 9px 9px 9px rgba(100, 100, 100, 0.3), -9px -9px 9px rgba(255, 255, 255, 0.4);}
+  80% {box-shadow: 0 0 0 rgba(100, 100, 100, 0.3), 0 0 0 rgba(255, 255, 255, 0.4);}
+  100% {box-shadow: inset 2px 2px 4px rgba(100, 100, 100, 0.3), inset -2px -2px 4px rgba(255, 255, 255, 0.4);}
+}
+
+@keyframes unhovering {
+  0% {box-shadow: inset 2px 2px 4px rgba(100, 100, 100, 0.3), inset -2px -2px 4px rgba(255, 255, 255, 0.4);}
+  20% {box-shadow: 0 0 0 rgba(100, 100, 100, 0.3), 0 0 0 rgba(255, 255, 255, 0.4);}
+  100% {box-shadow: 9px 9px 9px rgba(100, 100, 100, 0.3), -9px -9px 9px rgba(255, 255, 255, 0.4);}
+}
+@keyframes bump {
+  from {box-shadow: 0 0 0 rgba(100, 100, 100, 0.3), 0 0 0 rgba(255, 255, 255, 0.4);}
+  to {box-shadow: 9px 9px 9px rgba(100, 100, 100, 0.3), -9px -9px 9px rgba(255, 255, 255, 0.4);}
+}
+@keyframes unbump {
+  from {box-shadow: 9px 9px 9px rgba(100, 100, 100, 0.3), -9px -9px 9px rgba(255, 255, 255, 0.4);}
+  to {box-shadow: 0 0 0 rgba(100, 100, 100, 0.3), 0 0 0 rgba(255, 255, 255, 0.4);}
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .search_field {
+    display: none;
+  }
+  .grid-container {
+    grid-template-rows: 60px auto;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 'logo buttons' 'menu menu';
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .search_field {
+    display: none;
+  }
+  .grid-container {
+    grid-template-rows: 60px auto;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 'logo buttons' 'menu menu';
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .search_field {
+    display: none;
+  }
+  .grid-container {
+    grid-template-rows: 60px auto;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 'logo buttons' 'menu menu';
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .search_field {
+    display: none;
+  }
+  .grid-container {
+    grid-template-rows: 60px auto;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 'logo buttons' 'menu menu';
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .search_field {
+    display: block;
+  }
+  .grid-container {
+    grid-template-rows: 60px auto;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: 'logo search buttons' 'menu menu menu';
+  }
+}
