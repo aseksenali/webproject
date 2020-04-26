@@ -1,0 +1,42 @@
+<div *ngIf="book" class="grid-container">
+  <div class="image">
+    <img [src]="book.image" alt="Book Image" class="shadowed"/>
+  </div>
+  <div class="details">
+    <div>
+      <label>
+        <input type='text' [(ngModel)]="book.name" style="font-size: 40px; font-weight: bold; margin: 30px 0 0 0;">
+      </label>
+    </div>
+    <div>
+      <label>
+        <input type='text' [(ngModel)]="book.author">
+      </label>
+    </div>
+    <div>
+      <i class="fas fa-star" *ngFor="let _ of generateArray(fullRating)"></i>
+      <i class="fas fa-star-half-alt" *ngFor="let _ of generateArray(halfRating)"></i>
+      <i class="far fa-star" *ngFor="let _ of generateArray(5 - fullRating - halfRating)"></i>
+      <label><input (keypress)="$event.preventDefault()" type="number" step="0.5" min="0" max="5"
+                    [(ngModel)]="displayRating"
+                    style="display: inline;position: relative; top: -.1em; font-size: 25px;margin-left: 10px;"
+                    (ngModelChange)="calculateRating()"></label>
+    </div>
+    <div>
+      <label>Price: <input type="text" style="display: inline-block" [(ngModel)]="formattedAmount"
+                           (blur)="changePrice()"></label>
+    </div>
+    <div class="genres">
+      <p>Genres:<span *ngFor="let genre of book.genre" class="shadowed">{{genre}}</span></p>
+    </div>
+    <button #button class="shadowed bumping animated" (click)="$event.stopPropagation(); createOrder()" style="margin: 20px 0;"><span #text>Add to card</span><i
+      #i class="fas fa-check"></i></button>
+    <div class="textarea">
+      <label>
+        Description:
+        <textarea [(ngModel)]="book.description"></textarea>
+      </label>
+    </div>
+    <button class="shadowed bumping animated" style="width:30%" (click)="save()">Redact book description</button>
+  </div>
+</div>

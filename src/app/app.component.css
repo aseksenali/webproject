@@ -1,0 +1,14 @@
+.site {
+  display: grid;
+  margin: 32px 50px;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr;
+  grid-template-areas: 'header' 'main';
+}
+app-header {
+  grid-area: header;
+}
+
+router-outlet {
+  grid-area: main;
+}
