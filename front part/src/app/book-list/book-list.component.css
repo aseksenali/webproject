@@ -1,0 +1,74 @@
+.list {
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.add_book_button {
+  text-align: center;
+}
+.add_book_button>button {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #e1e1e1;
+  font-size: 30px;
+  border-radius: 50px;
+  box-shadow: 9px 9px 9px rgba(100, 100, 100, 0.3), -9px -9px 9px rgba(255, 255, 255, 0.4);
+  animation: unhovering 125ms;
+  animation-fill-mode: both;
+  transition: all ease-in-out 125ms;
+  outline: none;
+  cursor: pointer;
+}
+.add_book_button>button:active {
+  font-size: 28px;
+  animation-name: hovering;
+  animation-duration: 125ms;
+  animation-fill-mode: both;
+}
+
+.shadowed {
+  box-shadow: 9px 9px 9px rgba(100, 100, 100, 0.3), -9px -9px 9px rgba(255, 255, 255, 0.4);
+}
+
+@keyframes unhovering {
+  0% {box-shadow: inset 2px 2px 4px rgba(100, 100, 100, 0.3), inset -2px -2px 4px rgba(255, 255, 255, 0.4);}
+  20% {box-shadow: 0 0 0 rgba(100, 100, 100, 0.3), 0 0 0 rgba(255, 255, 255, 0.4);}
+  100% {box-shadow: 9px 9px 9px rgba(100, 100, 100, 0.3), -9px -9px 9px rgba(255, 255, 255, 0.4);}
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  app-sale-window {
+    display: none;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  app-sale-window {
+    display: none;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  app-sale-window {
+    display: none;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  app-sale-window {
+    display: none;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  app-sale-window {
+    display: block;
+  }
+}

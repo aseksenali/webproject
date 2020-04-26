@@ -1,0 +1,13 @@
+<div class="grid-container">
+  <div class="inputs">
+    <label>
+      Username <input class="input shadowed" type="text" [(ngModel)]="username">
+    </label>
+    <label>
+      Password <input class="input shadowed" type="password" [(ngModel)]="password">
+    </label>
+  </div>
+  <div class="button">
+    <button class="shadowed" (click)='login(username, password)'>Login</button>
+  </div>
+</div>

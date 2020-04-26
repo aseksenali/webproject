@@ -1,0 +1,10 @@
+<div class="filter-container">
+  <div class="filter-menu genre">
+    <h1>Choose genre</h1>
+    <div class="filter-form">
+      <label *ngFor="let genre of genres">
+        <input type="checkbox" [value]="genre" (change)="onGenreSelect($event)">{{genre | titlecase}}
+      </label>
+    </div>
+  </div>
+</div>

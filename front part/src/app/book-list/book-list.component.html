@@ -1,0 +1,7 @@
+<app-sale-window></app-sale-window>
+<div *ngIf="books" class="list">
+  <app-book-card *ngFor="let book of books" class="card" [book]="book"></app-book-card>
+</div>
+<div class="add_book_button">
+  <button class="shadowed" routerLink="create">+</button>
+</div>
