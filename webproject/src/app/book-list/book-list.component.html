@@ -1,0 +1,4 @@
+<app-sale-window></app-sale-window>
+<div *ngIf="books" class="list">
+  <app-book-card *ngFor="let book of books" class="card" [book]="book"></app-book-card>
+</div>
