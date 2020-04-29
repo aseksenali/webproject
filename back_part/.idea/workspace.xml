@@ -26,7 +26,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/api" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -72,6 +72,7 @@
       <updated>1588087661774</updated>
       <workItem from="1588087697421" duration="343000" />
       <workItem from="1588088081464" duration="1283000" />
+      <workItem from="1588156272610" duration="45000" />
     </task>
     <servers />
   </component>
@@ -99,9 +100,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="275" key="GridCell.Tab.0.right/0.0.1920.1040/-1680.202.1680.1010@0.0.1920.1040" timestamp="1588089367120" />
-    <state x="461" y="165" key="SettingsEditor" timestamp="1588089300165">
+    <state x="461" y="165" key="SettingsEditor" timestamp="1588156316895">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1680.202.1680.1010@0.0.1920.1040" timestamp="1588089300165" />
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1680.202.1680.1010@0.0.1920.1040" timestamp="1588156316895" />
   </component>
 </project>
